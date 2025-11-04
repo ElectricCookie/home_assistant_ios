@@ -23,7 +23,7 @@ struct CountdownLiveActivity: Widget {
                     }
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(timerInterval: context.state.endTime...Date.now, countsDown: false)
+                    Text(timerInterval: Date.now...context.state.endTime, countsDown: true)
                         .multilineTextAlignment(.trailing)
                         .frame(width: 50)
                         .font(.caption2)
@@ -45,7 +45,7 @@ struct CountdownLiveActivity: Widget {
                     ))
                 }
             } compactTrailing: {
-                Text(timerInterval: context.state.endTime...Date.now, countsDown: false)
+                Text(timerInterval: Date.now...context.state.endTime, countsDown: true)
                     .font(.caption2)
                     .monospacedDigit()
             } minimal: {
@@ -82,7 +82,7 @@ private struct CountdownLiveActivityView: View {
                         .foregroundColor(.white)
                 }
                 
-                Text(timerInterval: context.state.endTime...Date.now, countsDown: false)
+                Text(timerInterval: Date.now...context.state.endTime, countsDown: true)
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)

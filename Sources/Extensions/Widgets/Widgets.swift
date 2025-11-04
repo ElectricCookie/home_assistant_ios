@@ -9,6 +9,8 @@ enum WidgetLauncher {
             WidgetsBundle18.main()
         } else if #available(iOSApplicationExtension 17.0, *) {
             WidgetsBundle17.main()
+        } else if #available(iOSApplicationExtension 16.1, *) {
+            WidgetsBundle16.main()
         } else {
             WidgetsBundleLegacy.main()
         }
@@ -27,6 +29,20 @@ struct WidgetsBundleLegacy: WidgetBundle {
     }
 }
 
+@available(iOS 16.1, *)
+struct WidgetsBundle16: WidgetBundle {
+    init() {
+        MaterialDesignIcons.register()
+    }
+
+    var body: some Widget {
+        WidgetAssist()
+        LegacyWidgetActions()
+        WidgetOpenPage()
+        CountdownLiveActivity()
+    }
+}
+
 @available(iOS 17.0, *)
 struct WidgetsBundle17: WidgetBundle {
     init() {
@@ -42,6 +58,7 @@ struct WidgetsBundle17: WidgetBundle {
         WidgetActions()
         WidgetOpenPage()
         WidgetSensors()
+        CountdownLiveActivity()
     }
 }
 
@@ -71,5 +88,8 @@ struct WidgetsBundle18: WidgetBundle {
         WidgetSensors()
         WidgetActions()
         WidgetOpenPage()
+        
+        // Live Activities
+        CountdownLiveActivity()
     }
 }

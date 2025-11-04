@@ -15,15 +15,11 @@ struct CountdownLiveActivity: Widget {
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
                     if let iconName = context.state.icon {
-                        let icon = MaterialDesignIcons(named: iconName)
-                        Image(uiImage: icon.image(
-                            ofSize: CGSize(width: 24, height: 24),
-                            color: .white
-                        ))
+                        iconImage(named: iconName, size: 24)
                     }
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(timerInterval: Date.now...context.state.endTime, countsDown: true)
+                    Text(context.state.endTime, style: .timer)
                         .multilineTextAlignment(.trailing)
                         .frame(width: 50)
                         .font(.caption2)
@@ -38,26 +34,26 @@ struct CountdownLiveActivity: Widget {
                 }
             } compactLeading: {
                 if let iconName = context.state.icon {
-                    let icon = MaterialDesignIcons(named: iconName)
-                    Image(uiImage: icon.image(
-                        ofSize: CGSize(width: 16, height: 16),
-                        color: .white
-                    ))
+                    iconImage(named: iconName, size: 16)
                 }
             } compactTrailing: {
-                Text(timerInterval: Date.now...context.state.endTime, countsDown: true)
+                Text(context.state.endTime, style: .timer)
                     .font(.caption2)
                     .monospacedDigit()
             } minimal: {
                 if let iconName = context.state.icon {
-                    let icon = MaterialDesignIcons(named: iconName)
-                    Image(uiImage: icon.image(
-                        ofSize: CGSize(width: 16, height: 16),
-                        color: .white
-                    ))
+                    iconImage(named: iconName, size: 16)
                 }
             }
         }
+    }
+    
+    private func iconImage(named iconName: String, size: CGFloat) -> some View {
+        let icon = MaterialDesignIcons(named: iconName)
+        return Image(uiImage: icon.image(
+            ofSize: CGSize(width: size, height: size),
+            color: .white
+        ))
     }
 }
 
@@ -68,11 +64,7 @@ private struct CountdownLiveActivityView: View {
     var body: some View {
         HStack {
             if let iconName = context.state.icon {
-                let icon = MaterialDesignIcons(named: iconName)
-                Image(uiImage: icon.image(
-                    ofSize: CGSize(width: 32, height: 32),
-                    color: .white
-                ))
+                iconImage(named: iconName, size: 32)
             }
             
             VStack(alignment: .leading, spacing: 4) {
@@ -82,7 +74,7 @@ private struct CountdownLiveActivityView: View {
                         .foregroundColor(.white)
                 }
                 
-                Text(timerInterval: Date.now...context.state.endTime, countsDown: true)
+                Text(context.state.endTime, style: .timer)
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -93,6 +85,14 @@ private struct CountdownLiveActivityView: View {
         }
         .padding()
         .activityBackgroundTint(Color.black.opacity(0.3))
+    }
+    
+    private func iconImage(named iconName: String, size: CGFloat) -> some View {
+        let icon = MaterialDesignIcons(named: iconName)
+        return Image(uiImage: icon.image(
+            ofSize: CGSize(width: size, height: size),
+            color: .white
+        ))
     }
 }
 

@@ -15,7 +15,7 @@ struct CountdownLiveActivity: Widget {
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
                     if let iconName = context.state.icon {
-                        iconImage(named: iconName, size: 24)
+                        CountdownIconHelper.iconImage(named: iconName, size: 24)
                     }
                 }
                 DynamicIslandExpandedRegion(.trailing) {
@@ -34,7 +34,7 @@ struct CountdownLiveActivity: Widget {
                 }
             } compactLeading: {
                 if let iconName = context.state.icon {
-                    iconImage(named: iconName, size: 16)
+                    CountdownIconHelper.iconImage(named: iconName, size: 16)
                 }
             } compactTrailing: {
                 Text(context.state.endTime, style: .timer)
@@ -42,18 +42,10 @@ struct CountdownLiveActivity: Widget {
                     .monospacedDigit()
             } minimal: {
                 if let iconName = context.state.icon {
-                    iconImage(named: iconName, size: 16)
+                    CountdownIconHelper.iconImage(named: iconName, size: 16)
                 }
             }
         }
-    }
-    
-    private func iconImage(named iconName: String, size: CGFloat) -> some View {
-        let icon = MaterialDesignIcons(named: iconName)
-        return Image(uiImage: icon.image(
-            ofSize: CGSize(width: size, height: size),
-            color: .white
-        ))
     }
 }
 
@@ -64,7 +56,7 @@ private struct CountdownLiveActivityView: View {
     var body: some View {
         HStack {
             if let iconName = context.state.icon {
-                iconImage(named: iconName, size: 32)
+                CountdownIconHelper.iconImage(named: iconName, size: 32)
             }
             
             VStack(alignment: .leading, spacing: 4) {
@@ -86,8 +78,11 @@ private struct CountdownLiveActivityView: View {
         .padding()
         .activityBackgroundTint(Color.black.opacity(0.3))
     }
-    
-    private func iconImage(named iconName: String, size: CGFloat) -> some View {
+}
+
+@available(iOS 16.1, *)
+private enum CountdownIconHelper {
+    static func iconImage(named iconName: String, size: CGFloat) -> some View {
         let icon = MaterialDesignIcons(named: iconName)
         return Image(uiImage: icon.image(
             ofSize: CGSize(width: size, height: size),

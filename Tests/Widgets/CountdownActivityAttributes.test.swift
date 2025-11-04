@@ -44,6 +44,8 @@ struct CountdownActivityAttributesTests {
             icon: "mdi:timer"
         )
         
-        #expect(contentState1.hashValue == contentState2.hashValue)
+        // Test that equal objects are treated as equal in a Set
+        let set: Set = [contentState1]
+        #expect(set.contains(contentState2))
     }
 }

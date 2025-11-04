@@ -1371,6 +1371,11 @@
 		FD3BC66C29BA00D600B19FBE /* CarPlayEntitiesListTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC66B29BA00D600B19FBE /* CarPlayEntitiesListTemplate.swift */; };
 		FD3BC66E29BA010A00B19FBE /* CarPlayDomainsListTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC66D29BA010A00B19FBE /* CarPlayDomainsListTemplate.swift */; };
 		FD5FEB304713F1E6BFE498DC /* Pods_iOS_Extensions_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE950A9D74B3E7FF5665CB38 /* Pods_iOS_Extensions_NotificationService.framework */; };
+		84DC777783EB6B02C7AB63B5 /* CountdownActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C236B503C4F1AF774671EEF /* CountdownActivityAttributes.swift */; };
+		E5B240DB65C12D4D497B51DD /* CountdownActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C236B503C4F1AF774671EEF /* CountdownActivityAttributes.swift */; };
+		847E7EDEFFF4098BF4F9166A /* CountdownLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */; };
+		E9A321DA458405C3D0C6B1CB /* CountdownLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */; };
+		37CEC1DF4AEEC2FE426FA55C /* CountdownActivityAttributes.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C7250308BBDF94ECC1E2C /* CountdownActivityAttributes.test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3119,6 +3124,9 @@
 		FD3BC66629BA003B00B19FBE /* HAEntity+CarPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HAEntity+CarPlay.swift"; sourceTree = "<group>"; };
 		FD3BC66B29BA00D600B19FBE /* CarPlayEntitiesListTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayEntitiesListTemplate.swift; sourceTree = "<group>"; };
 		FD3BC66D29BA010A00B19FBE /* CarPlayDomainsListTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayDomainsListTemplate.swift; sourceTree = "<group>"; };
+		5C236B503C4F1AF774671EEF /* CountdownActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownActivityAttributes.swift; sourceTree = "<group>"; };
+		1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLiveActivity.swift; sourceTree = "<group>"; };
+		C17C7250308BBDF94ECC1E2C /* CountdownActivityAttributes.test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownActivityAttributes.test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3551,10 +3559,20 @@
 				1171508324DFCF960065E874 /* Resources */,
 				4289DDAC2C85D595003591C2 /* Scene */,
 				42D3E4A92C5D28F800444BE6 /* Script */,
+				2EC5E1800D49A9258E03F417 /* LiveActivities */,
 				1171506F24DFCDE60065E874 /* Widgets.swift */,
 				42C101232CD3D7700012BA78 /* ControlRefreshDelay.swift */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		2EC5E1800D49A9258E03F417 /* LiveActivities */ = {
+			isa = PBXGroup;
+			children = (
+				5C236B503C4F1AF774671EEF /* CountdownActivityAttributes.swift */,
+				1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */,
+			);
+			path = LiveActivities;
 			sourceTree = "<group>";
 		};
 		1171508324DFCF960065E874 /* Resources */ = {
@@ -4270,6 +4288,7 @@
 		420E64B72D676A4200A31E86 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				C17C7250308BBDF94ECC1E2C /* CountdownActivityAttributes.test.swift */,
 				420E64B82D676A5800A31E86 /* WidgetsSnapshot.test.swift */,
 			);
 			path = Widgets;
@@ -8230,6 +8249,8 @@
 				427647202C8F36950027B21F /* ControlLightsValueProvider.swift in Sources */,
 				115560E327010DAB00A8F818 /* WidgetBasicButtonView.swift in Sources */,
 				42D3E4B52C5D2BC200444BE6 /* WidgetScriptsAppIntentTimelineProvider.swift in Sources */,
+				84DC777783EB6B02C7AB63B5 /* CountdownActivityAttributes.swift in Sources */,
+				847E7EDEFFF4098BF4F9166A /* CountdownLiveActivity.swift in Sources */,
 				1171507024DFCDE60065E874 /* Widgets.swift in Sources */,
 				4273C48A2C8858470065A5B4 /* ControlOpenPageValueProvider.swift in Sources */,
 				4289DDB52C85D7B8003591C2 /* SceneAppIntent.swift in Sources */,
@@ -8717,6 +8738,7 @@
 				11ED439827265B9C00B5FD45 /* OnboardingAuthStepNotify.test.swift in Sources */,
 				42196ADA2DA5AF7A00BD501E /* OnboardingServersListViewModelTests.swift in Sources */,
 				42A818E72BBEAAE80083D045 /* MockAssistService.swift in Sources */,
+				37CEC1DF4AEEC2FE426FA55C /* CountdownActivityAttributes.test.swift in Sources */,
 				420E64BA2D676A5800A31E86 /* WidgetsSnapshot.test.swift in Sources */,
 				11EFD3C327264306000AF78B /* UIAlertAction+Additions.swift in Sources */,
 				11A71C8F24A5946B00D9565F /* FakeCLLocationManager.swift in Sources */,

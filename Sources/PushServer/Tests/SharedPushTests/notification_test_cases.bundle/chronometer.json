@@ -1,0 +1,35 @@
+{
+    "input": {
+        "message": "Kitchen timer is ready",
+        "title": "Kitchen Timer",
+        "data": {
+            "chronometer": true,
+            "when": "2024-01-01T12:05:00Z",
+            "tag": "kitchen-timer",
+            "icon": "mdi:timer"
+        },
+        "registration_info": {
+            "app_id": "io.robbie.HomeAssistant.dev",
+            "os_version": "17.0",
+            "app_version": "2024.1"
+        }
+    },
+    "rate_limit": true,
+    "headers": {
+        "apns-push-type": "alert",
+        "apns-collapse-id": "kitchen-timer"
+    },
+    "payload": {
+        "aps": {
+            "alert": {
+                "body": "Kitchen timer is ready",
+                "title": "Kitchen Timer"
+            },
+            "sound": "default"
+        },
+        "chronometer": true,
+        "icon": "mdi:timer",
+        "tag": "kitchen-timer",
+        "when": "2024-01-01T12:05:00Z"
+    }
+}

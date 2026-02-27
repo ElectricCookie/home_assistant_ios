@@ -1376,6 +1376,8 @@
 		847E7EDEFFF4098BF4F9166A /* CountdownLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */; };
 		E9A321DA458405C3D0C6B1CB /* CountdownLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */; };
 		37CEC1DF4AEEC2FE426FA55C /* CountdownActivityAttributes.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C7250308BBDF94ECC1E2C /* CountdownActivityAttributes.test.swift */; };
+		4D1B1051D57F55FE07890279 /* CountdownActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E2C09147BC299AFA71887 /* CountdownActivityAttributes.swift */; };
+		F1725FA355E711E1ACF9FAFD /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899A554B6664F62A15F3D5B1 /* LiveActivityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3127,6 +3129,8 @@
 		5C236B503C4F1AF774671EEF /* CountdownActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownActivityAttributes.swift; sourceTree = "<group>"; };
 		1805F4E65BCE03CB009E5D24 /* CountdownLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLiveActivity.swift; sourceTree = "<group>"; };
 		C17C7250308BBDF94ECC1E2C /* CountdownActivityAttributes.test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownActivityAttributes.test.swift; sourceTree = "<group>"; };
+		F38E2C09147BC299AFA71887 /* CountdownActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownActivityAttributes.swift; sourceTree = "<group>"; };
+		899A554B6664F62A15F3D5B1 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3592,6 +3596,7 @@
 				11195F6E267EFC8E003DF674 /* NotificationManagerLocalPushInterfaceDirect.swift */,
 				11B92A7F266F23CD00786588 /* NotificationManagerLocalPushInterfaceExtension.swift */,
 				11195F70267EFE2C003DF674 /* NotificationManagerLocalPushInterfaceUnsupported.swift */,
+				899A554B6664F62A15F3D5B1 /* LiveActivityManager.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -4310,6 +4315,14 @@
 				4223688F2D40FCDE005911E4 /* CustomWidget.swift */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		FB118EC8EF40C080DED7092D /* LiveActivities */ = {
+			isa = PBXGroup;
+			children = (
+				F38E2C09147BC299AFA71887 /* CountdownActivityAttributes.swift */,
+			);
+			path = LiveActivities;
 			sourceTree = "<group>";
 		};
 		420F53EC2C4E9FF1003C8415 /* Widgets */ = {
@@ -6415,6 +6428,7 @@
 				D0C884782122A64500CCB501 /* Settings */,
 				42CA28B22B101DA70093B31A /* Utilities */,
 				426266432C11B0070081A818 /* Watch */,
+				FB118EC8EF40C080DED7092D /* LiveActivities */,
 				420F53E92C4E9D43003C8415 /* Widget */,
 				D03D891920E0A85300D4F28D /* Shared.h */,
 				4254C4C92D103ABB00245021 /* ExternalLink.swift */,
@@ -8454,6 +8468,7 @@
 				42E95C552CA44FC90010ECE3 /* SafariWebView.swift in Sources */,
 				11A71C6D24A4641600D9565F /* ZoneManagerEvent.swift in Sources */,
 				42B74A622D36B08600C37304 /* WidgetBasicView.swift in Sources */,
+				F1725FA355E711E1ACF9FAFD /* LiveActivityManager.swift in Sources */,
 				117EB15C2569AD4600049541 /* NotificationManager.swift in Sources */,
 				1187DE4224D77CCC00F0A6A6 /* NFCTagViewController.swift in Sources */,
 				42D3E4B12C5D2B3C00444BE6 /* ScriptAppIntent.swift in Sources */,
@@ -9141,6 +9156,7 @@
 				11B38EEA275C54A200205C7B /* PickAServerError.swift in Sources */,
 				B6B74CBD228399AB00D58A68 /* Action.swift in Sources */,
 				11CB98CA249E62E700B05222 /* Version+HA.swift in Sources */,
+				4D1B1051D57F55FE07890279 /* CountdownActivityAttributes.swift in Sources */,
 				420F53EA2C4E9D54003C8415 /* WidgetsKind.swift in Sources */,
 				11EE9B4924C5116F00404AF8 /* LegacyModelManager.swift in Sources */,
 				46C62BA12D8A3799002C0001 /* SnapshottablePreviewConfigurations.swift in Sources */,

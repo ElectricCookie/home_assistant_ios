@@ -101,6 +101,10 @@ class NotificationManager: NSObject, LocalPushManagerDelegate {
     private func handleRemoteNotification(userInfo: [AnyHashable: Any]) -> Guarantee<UIBackgroundFetchResult> {
         Current.Log.verbose("remote notification: \(userInfo)")
 
+        if #available(iOS 16.1, *) {
+            LiveActivityManager.shared.handlePushNotification(userInfo: userInfo)
+        }
+
         return commandManager.handle(userInfo).map {
             UIBackgroundFetchResult.newData
         }.recover { _ in

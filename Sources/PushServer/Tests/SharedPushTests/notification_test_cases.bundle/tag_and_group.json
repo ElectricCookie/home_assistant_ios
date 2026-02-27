@@ -23,6 +23,7 @@
             },
             "sound": "default",
             "thread-id": "test_group"
-        }
+        },
+        "tag": "test_tag"
     }
 }

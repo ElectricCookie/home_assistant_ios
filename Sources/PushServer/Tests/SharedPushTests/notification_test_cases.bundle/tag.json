@@ -21,6 +21,7 @@
                 "body": "test"
             },
             "sound": "default"
-        }
+        },
+        "tag": "test_tag"
     }
 }

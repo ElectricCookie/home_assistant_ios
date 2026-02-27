@@ -163,6 +163,12 @@ public struct LegacyNotificationParserImpl: LegacyNotificationParser {
         payload["url"] = data["url"]
         payload["shortcut"] = data["shortcut"]
         payload["presentation_options"] = data["presentation_options"]
+        
+        // Forward chronometer data for Live Activity support on iOS
+        payload["chronometer"] = data["chronometer"]
+        payload["when"] = data["when"]
+        payload["icon"] = data["icon"]
+        payload["tag"] = data["tag"]
 
         payload.mutateInside("aps") { aps in
             aps.mutateInside("alert") { alert in

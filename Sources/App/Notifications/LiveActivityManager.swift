@@ -16,12 +16,12 @@ final class LiveActivityManager {
         guard
             let chronometer = userInfo["chronometer"] as? Bool,
             chronometer == true,
-            let whenValue = userInfo["when"]
-        else { return }
-        
-        let endTime = parseEndTime(whenValue)
-        guard let endTime else {
-            Current.Log.error("LiveActivityManager: could not parse 'when' value: \(whenValue)")
+            let whenValue = userInfo["when"],
+            let endTime = parseEndTime(whenValue)
+        else {
+            if userInfo["chronometer"] != nil {
+                Current.Log.error("LiveActivityManager: failed to parse chronometer notification: \(userInfo)")
+            }
             return
         }
         
